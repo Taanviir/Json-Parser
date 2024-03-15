@@ -35,7 +35,7 @@ JsonParser::JsonParser(const std::string& filepath) {
  * 
  * @return JsonValue The main Json object
 */
-JsonValue JsonParser::parseJSON(void) {
+JsonValue JsonParser::parse(void) {
     std::cout << "Parsing JSON" << std::endl;
 
     JsonValue json = parseValue();

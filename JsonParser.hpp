@@ -12,7 +12,7 @@ public:
     JsonParser(const std::string& filepath);
     ~JsonParser() {};
 
-    JsonValue parseJSON(void);
+    JsonValue parse(void);
 
 private:
     std::string _content;
