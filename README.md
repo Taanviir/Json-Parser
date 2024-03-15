@@ -57,6 +57,7 @@ To add more tests, add a new test JSON file in the `tests` directory.
 - The iteration through the JSON object is not in the order of the keys in the JSON string. This is because the `std::map` does not guarantee the order of the keys.
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## References
 - [Making a Simple JSON Parser From Scratch](https://dev.to/uponthesky/c-making-a-simple-json-parser-from-scratch-250g)
