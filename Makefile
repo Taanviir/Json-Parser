@@ -9,7 +9,6 @@ CXX:= c++
 DEPFLAGS:= -MMD -MP
 CXXFLAGS:= -Wall -Wextra -Werror -std=c++98 $(DEPFLAGS)
 DEBUGFLAGS:= -ggdb3 -D__DEBUG__
-SANITIZE:= -fsanitize=address
 
 ifeq ($(shell uname), Linux)
 	CXXFLAGS += -D__LINUX__
@@ -46,6 +45,16 @@ $(OBJS_DIR):
 debug: CXXFLAGS += $(DEBUGFLAGS)
 debug: all
 	@echo "$(MAGENTA)[ DEBUG ]$(RESET) $(NAME) is ready for debugging."
+
+test: CXXFLAGS += $(DEBUGFLAGS)
+test: re
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o test_parser tests.cpp $(NAME)
+	@echo "$(MAGENTA)[ TEST ]$(RESET) test_parser is ready."
+	@for file in tests/*.json; do \
+		echo "Testing $$file"; \
+		./test_parser $$file; \
+		echo; \
+	done
 
 clean:
 	@$(RM) $(OBJS_DIR) *.d
