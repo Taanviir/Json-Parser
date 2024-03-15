@@ -40,7 +40,9 @@ static std::string ERR_JSON_TYPE("Parser: invalid JSON type");
 static std::string ERR_JSON_QUOTE("Parser: unclosed quote");
 
 /*----------------------------------COLORS------------------------------------*/
-#define RE "\033[0m"
-#define W "\033[1;33m"
+#define RE "\001\033[0;39m\002" // reset
+#define W  "\001\033[1;97m\002" // white
+#define R  "\001\033[1;91m\002" // red
+#define G  "\001\033[1;92m\002" // green light
 
 #endif
