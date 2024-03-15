@@ -57,12 +57,12 @@ test: re
 	done
 
 clean:
-	@$(RM) $(OBJS_DIR) *.d
+	@$(RM) $(OBJS_DIR) *.d tests/*.d
 	@echo "$(RED)[ DELETE ]$(RESET) Removed object files."
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(RM) test_parser
+	@$(RM) tests/test_parser
 	@echo "$(RED)[ DELETE ]$(RESET) Removed $(NAME).\n"
 
 -include $(DEP)
