@@ -9,8 +9,8 @@ int main(int argc, char* argv[]) {
     try {
         JsonParser parser(argv[1]);
         parser.parse();
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
+    } catch (const std::exception& error) {
+        std::cerr << R << "[ ERROR ] " << RE << error.what() << std::endl;
         return 1;
     }
     return 0;
