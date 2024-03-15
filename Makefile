@@ -48,11 +48,11 @@ debug: all
 
 test: CXXFLAGS += $(DEBUGFLAGS)
 test: re
-	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o test_parser tests.cpp $(NAME)
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o tests/test_parser tests/tests.cpp $(NAME)
 	@echo "$(MAGENTA)[ TEST ]$(RESET) test_parser is ready."
 	@for file in tests/*.json; do \
 		echo "Testing $$file"; \
-		./test_parser $$file; \
+		./tests/test_parser $$file; \
 		echo; \
 	done
 
