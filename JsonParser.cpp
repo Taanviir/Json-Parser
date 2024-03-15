@@ -28,6 +28,7 @@ JsonParser::JsonParser(const std::string& filepath) {
     inputFileStream.close();
 
     _content = file;
+    _itr = _content.begin();
 }
 
 /**
@@ -49,7 +50,7 @@ JsonValue JsonParser::parse(void) {
     if (json.asObject().empty())
         throw std::runtime_error(ERR_EMPTY);
 
-    std::cout << "JSON parsed successfully" << std::endl;
+    std::cout << G << "JSON parsed successfully" << RE << std::endl;
 
     return json;
 }
