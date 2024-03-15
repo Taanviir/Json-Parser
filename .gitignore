@@ -1,0 +1,5 @@
+objects
+*.o
+*.d
+test_parser
+libjsonparser.a
